@@ -215,6 +215,65 @@
                       </div>
                       <br>
                         <!-- end -->
+                        <!-- st -->
+                        <div class="row" x-data="handler()">
+                          <div class="col">
+                            <div class="mb-3">
+                              <div class="form-group">
+                                <label class="control-label required" style="color: red;">12. Visa Details (Photocopy to be Attached)</label>
+                                <table class="table table-bordered
+                                  align-items-center table-sm">
+                                  <thead class="thead-light">
+                                    <tr>
+                                      <th>Ser</th>
+                                      <th>VISA No</th>
+                                      <th>Type of VISA</th>
+                                      <th>Date and Place of Issue</th>
+                                      <th>Date of VISA Expiry</th>
+                                      <th>Remove</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <template x-for="(field, index) in
+                                      fields"
+                                      :key="index">
+                                      <tr>
+                                        <td x-text="index + 1"></td>
+                                        <td><input x-model="field.txt1"
+                                            type="text" name="dual_visa_no[]"
+                                            class="form-control"></td>
+                                        <td><input x-model="field.txt2"
+                                            type="text" name="visa_types[]"
+                                            class="form-control"></td>
+                                        <td><input x-model="field.txt3"
+                                            type="text"
+                                            name="visa_issue[]"
+                                            class="form-control"></td>
+                                        <td><input x-model="field.txt4"
+                                            type="text" name="visa_expiry[]"
+                                            class="form-control"></td>
+                                        <td><button type="button"
+                                            class="btn
+                                            btn-danger btn-small"
+                                            @click="removeField(index)">&times;</button></td>
+                                      </tr>
+                                    </template>
+                                  </tbody>
+                                  <tfoot>
+                                    <tr>
+                                      <td colspan="4" class="text-right"><button
+                                          type="button" class="btn
+                                          btn-info"
+                                          @click="addNewField()">+ Add
+                                        </button></td>
+                                    </tr>
+                                  </tfoot>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end -->
                         <div class="form-group">
                             <label for="namelink">Movie Link</label>
                             <input class="form-control" id="namelink" type="text" placeholder="">
@@ -285,6 +344,9 @@
     <!-- Plugin used-->
     <!-- for add/remove -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+  
     <script>
          $(document).ready(function() {
       $(".add-more").click(function(){ 
@@ -296,6 +358,35 @@
       });
 
     });
+    // end
+    // FOR RADIO
+         $('input[type="radio"]').click(function(){
+                if($(this).attr("value")=="ABC"){
+                    $(".Box").hide('slow');
+                }
+                if($(this).attr("value")=="PQR"){
+                    $(".Box").show('slow');
+         
+                }        
+            });
+          $('input[type="radio"]').trigger('click');
+      // FOR dynamic
+
+      function handler() {
+                return {
+                  fields: [],
+                  addNewField() {
+                      this.fields.push({
+                          txt1: '',
+                          txt2: ''
+                      });
+                    },
+                    removeField(index) {
+                      this.fields.splice(index, 1);
+                    }
+                  }
+            }
+
     </script>
   </body>
 
