@@ -155,10 +155,10 @@
             <div class="page-header">
               <div class="row">
                 <div class="col-sm-6">
-                  <h3>Movie Admin Panel</h3>
+                  <h3>Movie Booking List</h3>
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Movie Panel</li>
+                    <li class="breadcrumb-item active">Booking History</li>
                   </ol>
                 </div>
                 <div class="col-sm-6">
@@ -172,82 +172,83 @@
           <!-- Container-fluid starts-->
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12">
-                <div class="card">
-                  <div class="card-header pb-0">
-                    <h5>Create Movie Panel</h5>
-                  </div>
-                  <div class="card-body">
-                    <form class="form-wizard" id="regForm" action="#" method="POST">
-                      <div class="tab">
-                        <div class="form-group">
-                          <label for="name">Movie Title</label>
-                          <input class="form-control" id="name" type="text" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Show date</label>
-                            <input class="form-control" type="date" required="required">
-                          </div>
-                       
-                        <!-- start -->
-                        <div class="from-group">
-                           
-                            <label for="contact">Show time</label>
-                            <div class="input-group control-group after-add-more">
-                          
-                          
-                             <input type="date" name="addmore[]" class="form-control" placeholder="Enter Name Here">
-                                <div class="input-group-btn"> 
-                                <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> </button>
-                                </div>
-                            </div>
-                    
-                            
-                        
-                           <div class="copy-fields hide">
-                              <div class="control-group input-group" style="margin-top:10px">
-                                <input type="date" name="addmore[]" class="form-control" placeholder="Enter Name Here">
-                                <div class="input-group-btn"> 
-                                  <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                      </div>
-                      <br>
-                        <!-- end -->
-                        <div class="form-group">
-                            <label for="namelink">Movie Link</label>
-                            <input class="form-control" id="namelink" type="text" placeholder="">
-                          </div>
-                        <div class="form-group">
-                            <label for="name89">Movie Poster</label>
-                            <input class="form-control" id="name89" type="text" placeholder="">
-                          </div>
-                          <div class="form-group ">
-                            <label for="exampleFormControlInput1">Movie Image</label>
-                            <input class="form-control" type="file" aria-label="file example" required="">
-                            
-                          </div>
-                          <div class="mb-3">
-                            <label  for="validationTextarea">Movie Description</label>
-                            <textarea class="form-control textarea" id="validationTextarea" placeholder="" required=""></textarea>
-                            
-                          </div>
-                      </div>
-                   
-                    
-                    
+                <div class="col-sm-12">
+                    <div class="card">
                      
-                      <!-- Circles which indicates the steps of the form:-->
-                     
-                      <!-- Circles which indicates the steps of the form:-->
-                    </form>
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">ID</th>
+                              <th scope="col">Movie </th>
+                              <th scope="col">Member Name</th>
+                              <th scope="col"> Seat Number</th>
+                              <th scope="col">Time Slot</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Action</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Markdfgvdshgbr</td>
+                              <td>Markdfgvdshgbr</td>
+                              <td>14</td>
+                              <td>8:00</td>
+                              <td> <input class="form-control" type="date" required="required"></td>
+                              <td>
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-danger dropdown-toggle" id="btnGroupVerticalDrop1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                        <a class="dropdown-item" href="#">View</a>
+                                    </div>
+                                  </div>
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Markdfgvdshgbr</td>
+                                <td>Markdfgvdshgbr</td>
+                                <td>14</td>
+                                <td>8:00</td>
+                                <td> <input class="form-control" type="date" required="required"></td>
+                                <td>
+                                  <div class="btn-group" role="group">
+                                      <button class="btn btn-danger dropdown-toggle" id="btnGroupVerticalDrop1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                                      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                          <a class="dropdown-item" href="#">Delete</a>
+                                          <a class="dropdown-item" href="#">View</a>
+                                      </div>
+                                    </div>
+                              </td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>Markdfgvdshgbr</td>
+                                <td>Markdfgvdshgbr</td>
+                                <td>14</td>
+                                <td>8:00</td>
+                                <td> <input class="form-control" type="date" required="required"></td>
+                                <td>
+                                  <div class="btn-group" role="group">
+                                      <button class="btn btn-danger dropdown-toggle" id="btnGroupVerticalDrop1" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
+                                      <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+                                          <a class="dropdown-item" href="#">Delete</a>
+                                          <a class="dropdown-item" href="#">View</a>
+                                      </div>
+                                    </div>
+                              </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
             </div>
           </div>
           <!-- Container-fluid Ends-->
+          
         </div>
         <!-- footer start-->
         <footer class="footer">
@@ -283,7 +284,7 @@
    
     <!-- login js-->
     <!-- Plugin used-->
-    <!-- for add/remove -->
+    <!-- for add/remove input-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script>
          $(document).ready(function() {
