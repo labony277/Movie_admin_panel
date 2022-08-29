@@ -31,6 +31,9 @@
     <!-- for add/remove -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- Plugins css Ends-->
+     <!-- Plugins css start-->
+     <link rel="stylesheet" type="text/css" href="../assets/css/timepicker.css">
+     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
     <!-- App css-->
@@ -178,58 +181,32 @@
                     <h5>Create Movie Panel</h5>
                   </div>
                   <div class="card-body">
-                    <form class="form-wizard" id="regForm" action="#" method="POST">
-                      <div class="tab">
-                        <div class="form-group">
-                          <label for="name">Movie Title</label>
-                          <input class="form-control" id="name" type="text" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Show date</label>
-                            <input class="form-control" type="date" required="required">
+                   
+                        <form>
+                          <div class="mb-3">
+                            <label class="col-form-label" >Movie Title</label>
+                            <input class="form-control" type="text" name="movie-name" id="movie-name">
+                            <span id="error_movie_name" class="text-danger error_field"></span>
                           </div>
-                       
-                        <!-- start -->
-                        <div class="from-group">
-                           
-                            <label for="contact">Show time</label>
-                            <div class="input-group control-group after-add-more">
-                          
-                          
-                             <input type="date" name="addmore[]" class="form-control" placeholder="Enter Name Here">
-                                <div class="input-group-btn"> 
-                                <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> </button>
-                                </div>
-                            </div>
-                    
-                            
-                        
-                           <div class="copy-fields hide">
-                              <div class="control-group input-group" style="margin-top:10px">
-                                <input type="date" name="addmore[]" class="form-control" placeholder="Enter Name Here">
-                                <div class="input-group-btn"> 
-                                  <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                      </div>
-                      <br>
-                        <!-- end -->
-                        <!-- st -->
+                          <div class="mb-3">
+                            <label class="col-form-label" >Show Date</label>
+                            <input class="form-control" type="date" name="show-name" id="show-name">
+                            <span id="error_show_name" class="text-danger error_field"></span>
+                          </div>
+                          <!-- 3 -->
+                          <!-- st -->
+                          <br>
                         <div class="row" x-data="handler()">
                           <div class="col">
                             <div class="mb-3">
                               <div class="form-group">
-                                <label class="control-label required" style="color: red;">12. Visa Details (Photocopy to be Attached)</label>
+                                <label class="control-label required" >Show Time</label>
                                 <table class="table table-bordered
                                   align-items-center table-sm">
                                   <thead class="thead-light">
                                     <tr>
                                       <th>Ser</th>
-                                      <th>VISA No</th>
-                                      <th>Type of VISA</th>
-                                      <th>Date and Place of Issue</th>
-                                      <th>Date of VISA Expiry</th>
+                                      <th>Show Time</th>
                                       <th>Remove</th>
                                     </tr>
                                   </thead>
@@ -239,19 +216,11 @@
                                       :key="index">
                                       <tr>
                                         <td x-text="index + 1"></td>
-                                        <td><input x-model="field.txt1"
-                                            type="text" name="dual_visa_no[]"
-                                            class="form-control"></td>
-                                        <td><input x-model="field.txt2"
-                                            type="text" name="visa_types[]"
-                                            class="form-control"></td>
-                                        <td><input x-model="field.txt3"
-                                            type="text"
-                                            name="visa_issue[]"
-                                            class="form-control"></td>
-                                        <td><input x-model="field.txt4"
-                                            type="text" name="visa_expiry[]"
-                                            class="form-control"></td>
+                                        <td><div class="input-group clockpicker">
+                                          <input x-model="field.txt"
+                                            type="text" name="dual_show_no[]"
+                                            class="form-control" value="9:30"><span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span></div>
+                                          </td>
                                         <td><button type="button"
                                             class="btn
                                             btn-danger btn-small"
@@ -273,34 +242,37 @@
                             </div>
                           </div>
                         </div>
-                        <!-- end -->
-                        <div class="form-group">
-                            <label for="namelink">Movie Link</label>
-                            <input class="form-control" id="namelink" type="text" placeholder="">
+                       
+                          <!-- end 3 -->
+                          <div class="mb-3">
+                            <label class="col-form-label" >Trailer Link</label>
+                            <input class="form-control" type="text" name="movie-trailer" id="movie-trailer">
+                            <span id="error_movie_trailer" class="text-danger error_field"></span>
                           </div>
-                        <div class="form-group">
-                            <label for="name89">Movie Poster</label>
-                            <input class="form-control" id="name89" type="text" placeholder="">
+                          <div class="mb-3">
+                            <label class="col-form-label" >Movie Poster</label>
+                            <input class="form-control" type="file" name="movie-poster" id="movie-poster">
+                            <span id="error_movie_poster" class="text-danger error_field"></span>
                           </div>
-                          <div class="form-group ">
-                            <label for="exampleFormControlInput1">Movie Image</label>
-                            <input class="form-control" type="file" aria-label="file example" required="">
-                            
+                         
+                          <div class="mb-3">
+                            <label class="col-form-label" >Movie Image</label>
+                            <input class="form-control" type="file" name="movie-image" id="movie-image">
+                            <span id="error_movie_image" class="text-danger error_field"></span>
                           </div>
                           <div class="mb-3">
                             <label  for="validationTextarea">Movie Description</label>
                             <textarea class="form-control textarea" id="validationTextarea" placeholder="" required=""></textarea>
                             
                           </div>
-                      </div>
-                   
-                    
-                    
-                     
-                      <!-- Circles which indicates the steps of the form:-->
-                     
-                      <!-- Circles which indicates the steps of the form:-->
-                    </form>
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="button" style="margin-right: 50%;">Submit</button>
+                          </div>
+                        
+                          
+                            <input class="form-control" type="text" value="09:30">
+                          </div>
+                        </form>
                   </div>
                 </div>
               </div>
@@ -337,6 +309,11 @@
     <!-- Plugins JS start-->
     <script src="../assets/js/form-wizard/form-wizard.js"></script>
     <!-- Plugins JS Ends-->
+     <!-- Plugins JS start-->
+     <script src="../assets/js/time-picker/jquery-clockpicker.min.js"></script>
+     <script src="../assets/js/time-picker/highlight.min.js"></script>
+     <script src="../assets/js/time-picker/clockpicker.js"></script>
+     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="../assets/js/script.js"></script>
    
